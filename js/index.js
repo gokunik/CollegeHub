@@ -30,7 +30,7 @@ function loginSubmit(event) {
   let password = document.querySelector("#password");
 
   if (username.value === "gokunik" && password.value === "test123") {
-    window.location.pathname = "html/homepage.html";
+    window.location.href = "homepage.html";
   } else {
     let error = document.querySelector(".warning");
     error.innerHTML = "Your credientials are wrong";
@@ -65,7 +65,7 @@ function registerSubmit(event) {
     return;
   }
 
-    window.location.pathname = "html/homepage.html";
+    window.location.href = "homepage.html";
 
 }
 
