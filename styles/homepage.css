@@ -18,24 +18,66 @@
 .wrapper main .stories-wrapper {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 15px 0 20px 20px;
   border-radius: 4px;
   background-color: white;
   box-shadow: 0 0 0 1px rgba(153, 153, 153, 0.4);
   display: flex;
   align-items: center;
-  overflow: hidden;
+}
+
+
+.arrow-left, .arrow-right 
+{
+  position: absolute;
+  display: grid;
+  place-items: center;
+  top: 30%;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #000000;
+  z-index: 3;
+  margin-top: auto;
+  font-size: 1rem;
+}
+
+
+.arrow-left {
+  left:5px;
+}
+
+.arrow-left.display {
+  display: none;
+}
+
+
+.arrow-right {
+  left: none;
+  right: 5px;
+  margin-left: auto;
 }
 
 .wrapper main .stories-wrapper .story {
+  position: relative;
   display: flex;
   gap: 1.5rem;
+  overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 .wrapper main .stories-wrapper .story li {
+  flex: 0 0 auto;
   width: 55px;
+  padding: 5px 0 5px 5px;
   text-align: center;
 }
+
+.wrapper main .stories-wrapper .story li:hover {
+  transform: scale(1.03);
+}
+
 .wrapper main .stories-wrapper .story li p {
   /* margin-top: 5px; */
   position: relative;
@@ -136,9 +178,15 @@
   opacity: 0.8;
 }
 
+.post-container .post-body .post-stats i:hover {
+  color: tomato;
+}
+
+
 .post-container .post-body .post-stats i:nth-last-child(1) {
   margin-left: auto;
 }
+
 
 .post-container .post-body .post-info .likes {
   margin: 15px 0 5px 0;
@@ -201,7 +249,8 @@
 /* Footer styling */
 
 .wrapper footer {
-  position: relative;
+  position: sticky;
+  top: 5.75rem;
   width: 300px;
   height: max-content;
   background-color: white;
@@ -281,7 +330,7 @@
 
 /* media queries */
 
-@media only screen and(max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .wrapper footer {
     display: none;
   }
@@ -292,5 +341,12 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
+  .wrapper main {
+    max-width: 100%;
+  }
+
+  .wrapper main .post-wrapper .post-container {
+    margin-bottom:1rem;
+  }
 }
