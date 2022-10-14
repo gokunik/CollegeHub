@@ -21,9 +21,12 @@ if (window.location.pathname.split("/").pop() === "index.html") {
 }
 
 // Remove search bar and menu items form the navbar if the current page is index.html
- if (window.location.pathname.split("/").pop() === "index.html") {
-    let nav = document.querySelector(".nav-wrapper");
-    nav.children[1].remove();
-    nav.children[1].remove();
-    nav.style.justifyContent = "center";
-  }
+let body = document.querySelector("body");
+ body.onload = function () {
+  if (window.location.pathname.split("/").pop() === "index.html") {
+     let nav = document.querySelector(".nav-wrapper");
+     nav.children[1].remove();
+     nav.children[1].remove();
+     nav.style.justifyContent = "center";
+   }
+ };
